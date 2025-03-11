@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(to right, #ff7eb9, #6a4c93); 
+    height: 100vh; 
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Elemanları dikey hizalar */
+    justify-content: center; /* İçeriği dikeyde ortalar */
+    align-items: center; /* İçeriği yatayda ortalar */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content:center;
+    align-items:start;
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+}
+h1 {
+    text-align:center;
+}
+
+footer {
+    width: 100%; /* Sayfanın tamamını kaplasın */
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2); /* Hafif bir arka plan ekleyebilirsin */
+}
