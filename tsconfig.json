@@ -1,4 +1,4 @@
-/* Bu dosya hakkında daha fazla bilgi için https://aka.ms/tsconfig sayfasını ziyaret edin */
+
 {
     "compilerOptions": {
       "target": "ES6",

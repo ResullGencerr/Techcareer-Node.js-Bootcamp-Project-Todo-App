@@ -3,9 +3,9 @@ body {
     height: 100vh; 
     margin: 0;
     display: flex;
-    flex-direction: column; /* Elemanları dikey hizalar */
-    justify-content: center; /* İçeriği dikeyde ortalar */
-    align-items: center; /* İçeriği yatayda ortalar */
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
 }
 
@@ -23,10 +23,10 @@ h1 {
 }
 
 footer {
-    width: 100%; /* Sayfanın tamamını kaplasın */
+    width: 100%;
     text-align: center;
     position: absolute;
     bottom: 0;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.2); /* Hafif bir arka plan ekleyebilirsin */
+    background: rgba(0, 0, 0, 0.2); 
 }
