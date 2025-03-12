@@ -1,13 +1,24 @@
 import express from "express";
-import fs from "fs";
-import path from "path";
-
+import {db} from "../firebase";
+import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { Request, Response } from "express";
 
 const router = express.Router();
-const dbPath = path.join(__dirname, "../db.json");
 
-router.get("/", (req, res) => {
-    res.render("todo");
+const todoCollection = collection(db,"Todo");
+
+router.get("/",async (req: Request, res: Response) => {
+  try{
+    const snapshot = await getDocs(todoCollection);
+    const todos : any[] = [];
+    snapshot.forEach((doc) => {
+      todos.push({id: doc.id, ...doc.data()});
+    });
+    res.render("todo",{todos});
+  }
+  catch(err){
+    res.status(500).send(err);
+  }
   });
 
 

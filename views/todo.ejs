@@ -10,46 +10,18 @@
     </form>
     <div class="todo-list">
         <ul>
+            <% todos.forEach(todo=> { %>
             <li>
                <div class="todo-item">
                 <label  class="round-checkbox"><input type="checkbox"><span></span></label>
-                <label>Todo 1</label>
+                <label><%= todo.Name %></label>
                </div>
                 <div class="todo-item-actions">
                 <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
                  <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
                 </div>
             </li>
-            <li>
-                <div class="todo-item">
-                 <label  class="round-checkbox"><input type="checkbox"><span></span></label>
-                 <label>Todo 2</label>
-                </div>
-                 <div class="todo-item-actions">
-                 <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
-                  <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
-                 </div>
-             </li>
-             <li>
-                <div class="todo-item">
-                 <label  class="round-checkbox"><input type="checkbox"><span></span></label>
-                 <label>Todo 3</label>
-                </div>
-                 <div class="todo-item-actions">
-                 <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
-                  <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
-                 </div>
-             </li>
-             <li>
-                <div class="todo-item">
-                 <label  class="round-checkbox"><input type="checkbox"><span></span></label>
-                 <label>Todo 4</label>
-                </div>
-                 <div class="todo-item-actions">
-                 <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
-                  <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
-                 </div>
-             </li>
+            <% }) %>    
         </ul>
     </div>
     <div class="bottom-btn">

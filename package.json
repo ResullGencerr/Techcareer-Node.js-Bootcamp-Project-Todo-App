@@ -17,6 +17,8 @@
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
+    "firebase": "^11.4.0",
+    "firebase-admin": "^13.2.0",
     "fs": "^0.0.1-security",
     "json-server": "^1.0.0-beta.3",
     "method-override": "^3.0.0",
