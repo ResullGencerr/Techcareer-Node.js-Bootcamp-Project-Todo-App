@@ -4,29 +4,43 @@
         <h1>ToDo List</h1>
         <i class="fa-solid fa-file-pen fa-xl" style="color: #ff7eb9;"></i>
     </div>
-    <form method="submit" action="/todo">
-        <input class="input" type="text" name="todo" placeholder="Yeni görev ekleyin...">
+
+   <div class="form-container">
+    <form id="todoForm">
+        <input class="input" type="text" id="todoInput" name="todo" placeholder="Yeni görev ekleyin...">
         <button class="add-btn" type="submit">Ekle</button>
     </form>
+    <p id="error-message" style="display: none;">Lütfen alanı doldurun!</p>
+   </div>
+
     <div class="todo-list">
-        <ul>
-            <% todos.forEach(todo=> { %>
-            <li>
-               <div class="todo-item">
-                <label  class="round-checkbox"><input type="checkbox"><span></span></label>
-                <label><%= todo.Name %></label>
-               </div>
+        <ul id="todoList">
+            <% todos.forEach(todo => { %>
+            <li data-id="<%= todo.id %>">
+                <div class="todo-item">
+                    <label class="round-checkbox">
+                        <input type="checkbox" class="todo-checkbox" <%= todo.IsChecked ? 'checked' : '' %>>
+                        <span></span>
+                    </label>
+                    <label class="todo-name" ><%= todo.Name %></label>
+                </div>
                 <div class="todo-item-actions">
-                <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
-                 <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
+                    <button class="edit-btn"> 
+                        <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i>
+                    </button>
+                    <button class="delete-btn">
+                        <i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i>
+                    </button>
                 </div>
             </li>
             <% }) %>    
         </ul>
     </div>
+
     <div class="bottom-btn">
-        <button>Secilenleri Kaldir</button>
-        <button>Tumunu Kaldir</button>
+        <button id="deleteSelected">Seçilenleri Kaldır</button>
+        <button id="deleteAll">Tümünü Kaldır</button>
     </div>
 </div>
 <%- include('footer'); -%>
+

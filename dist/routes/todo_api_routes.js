@@ -30,4 +30,45 @@ router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.status(500).send(err);
     }
 }));
+router.post("/add", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { name, isChecked, date } = req.body;
+        const newTodo = {
+            Name: name,
+            IsChecked: isChecked,
+            Date: date
+        };
+        yield (0, firestore_1.addDoc)(todoCollection, newTodo);
+        res.redirect("/");
+    }
+    catch (err) {
+        res.status(500).send(err);
+    }
+}));
+router.delete("/delete/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        yield (0, firestore_1.deleteDoc)((0, firestore_1.doc)(todoCollection, id));
+        res.status(200).send({ message: "Görev başarıyla silindi!" });
+    }
+    catch (err) {
+        res.status(500).send(err);
+    }
+}));
+router.put("/edit/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const { name, isChecked, date } = req.body;
+        const newTodo = {
+            Name: name,
+            IsChecked: isChecked,
+            Date: date
+        };
+        yield (0, firestore_1.updateDoc)((0, firestore_1.doc)(todoCollection, id), newTodo);
+        res.status(200).send({ message: "Görev başarıyla güncellendi!" });
+    }
+    catch (err) {
+        res.status(500).send(err);
+    }
+}));
 exports.default = router;
