@@ -1,3 +1,60 @@
 <%- include('header'); -%>
-<div class="container"><h1>ToDo List</h1></div>
+<div class="container">
+    <div class="heading">
+        <h1>ToDo List</h1>
+        <i class="fa-solid fa-file-pen fa-xl" style="color: #ff7eb9;"></i>
+    </div>
+    <form method="submit" action="/todo">
+        <input class="input" type="text" name="todo" placeholder="Yeni görev ekleyin...">
+        <button class="add-btn" type="submit">Ekle</button>
+    </form>
+    <div class="todo-list">
+        <ul>
+            <li>
+               <div class="todo-item">
+                <label  class="round-checkbox"><input type="checkbox"><span></span></label>
+                <label>Todo 1</label>
+               </div>
+                <div class="todo-item-actions">
+                <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
+                 <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
+                </div>
+            </li>
+            <li>
+                <div class="todo-item">
+                 <label  class="round-checkbox"><input type="checkbox"><span></span></label>
+                 <label>Todo 2</label>
+                </div>
+                 <div class="todo-item-actions">
+                 <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
+                  <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
+                 </div>
+             </li>
+             <li>
+                <div class="todo-item">
+                 <label  class="round-checkbox"><input type="checkbox"><span></span></label>
+                 <label>Todo 3</label>
+                </div>
+                 <div class="todo-item-actions">
+                 <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
+                  <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
+                 </div>
+             </li>
+             <li>
+                <div class="todo-item">
+                 <label  class="round-checkbox"><input type="checkbox"><span></span></label>
+                 <label>Todo 4</label>
+                </div>
+                 <div class="todo-item-actions">
+                 <button class="edit-btn"> <i class="fa-solid fa-pen fa-xl" style="color: #ff7eb9;"></i></i></button>
+                  <button class="delete-btn"><i class="fa-solid fa-trash fa-xl" style="color: #ff7eb9;"></i></button>
+                 </div>
+             </li>
+        </ul>
+    </div>
+    <div class="bottom-btn">
+        <button>Secilenleri Kaldir</button>
+        <button>Tumunu Kaldir</button>
+    </div>
+</div>
 <%- include('footer'); -%>
