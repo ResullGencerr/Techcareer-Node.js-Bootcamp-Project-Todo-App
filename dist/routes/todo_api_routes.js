@@ -71,4 +71,29 @@ router.put("/edit/:id", (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(500).send(err);
     }
 }));
+router.put("/toggle/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const { isChecked } = req.body;
+        yield (0, firestore_1.updateDoc)((0, firestore_1.doc)(todoCollection, id), { IsChecked: isChecked });
+        res.status(200).send({ message: "Görev durumu güncellendi!" });
+    }
+    catch (err) {
+        res.status(500).send(err);
+    }
+}));
+router.delete("/delete-all", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const querySnapshot = yield (0, firestore_1.getDocs)(todoCollection);
+        const batch = (0, firestore_1.writeBatch)(firebase_1.db);
+        querySnapshot.forEach((doc) => {
+            batch.delete(doc.ref);
+        });
+        yield batch.commit();
+        res.status(200).json({ message: "Tüm görevler başarıyla silindi!" });
+    }
+    catch (err) {
+        res.status(500).json({ error: "Sunucu hatası!", details: err });
+    }
+}));
 exports.default = router;

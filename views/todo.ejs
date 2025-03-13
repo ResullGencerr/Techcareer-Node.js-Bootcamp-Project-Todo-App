@@ -22,7 +22,7 @@
                         <input type="checkbox" class="todo-checkbox" <%= todo.IsChecked ? 'checked' : '' %>>
                         <span></span>
                     </label>
-                    <label class="todo-name" ><%= todo.Name %></label>
+                    <label class="todo-name <%= todo.IsChecked ? 'completedTask' : '' %>"><%= todo.Name %></label>
                 </div>
                 <div class="todo-item-actions">
                     <button class="edit-btn"> 
@@ -38,8 +38,15 @@
     </div>
 
     <div class="bottom-btn">
-        <button id="deleteSelected">Seçilenleri Kaldır</button>
         <button id="deleteAll">Tümünü Kaldır</button>
+    </div>
+</div>
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Görevi Güncelle</h2>
+        <input type="text" id="editInput" placeholder="Yeni görev ekleyin..."/>
+        <button id="saveEdit">Güncelle</button>
     </div>
 </div>
 <%- include('footer'); -%>
