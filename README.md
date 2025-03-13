@@ -37,7 +37,7 @@ veya `nodemon` kullanıyorsanız:
 ```bash
 npm run dev
 ```
-Sunucu **http://localhost:1111** adresinde çalışmaya başlayacaktır.
+Sunucu **http://localhost:5000** adresinde çalışmaya başlayacaktır.
 
 ## Özellikler
 
