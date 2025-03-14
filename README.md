@@ -50,5 +50,8 @@ Sunucu **http://localhost:5000** adresinde çalışmaya başlayacaktır.
 ## Ekran Görüntüsü
 ![Ekran Görüntüsü](./public/images/todo-list-screenshot.png)
 
+## Sunum Dosyası
+[Sunumu Görüntüle](TechCareerNode.jsBootcampSunumu.pdf)
+
 ## Lisans
 Bu proje Resul Gencer tarafından yapılmıştır.
